@@ -5,7 +5,7 @@ import * as except from "./except";
 import * as project from "./project";
 
 // Defines routes
-export type Pattern = RegExp | string;
+export type Pattern = ((request: Request, server: Bun.Server) => boolean | Promise<boolean>) | RegExp | string;
 export type Resolve = (request: Request, server: Bun.Server) => (Response | null) | Promise<Response | null>;
 export type Route = {
     pattern: Pattern;

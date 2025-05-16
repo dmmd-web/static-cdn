@@ -15,9 +15,11 @@ export const server = Bun.serve({
             for(let i = 0; i < router.routes.length; i++) {
                 // Matches route
                 const route = router.routes[i]!;
-                const matched = typeof route.pattern === "string" ?
-                    route.pattern === url.pathname :
-                    route.pattern.test(url.pathname);
+                const matched = typeof route.pattern === "function" ?
+                    await route.pattern(request, server) :
+                    typeof route.pattern === "string" ?
+                        route.pattern === url.pathname :
+                        route.pattern.test(url.pathname);
                 if(!matched) continue;
                 
                 // Resolves route

@@ -3,7 +3,7 @@ import nodePath from "node:path";
 
 // Defines constants
 export const bunsvr = {
-    version: "1.0.0"
+    version: "1.0.1"
 };
 export const root = nodePath.resolve(import.meta.dir, "../");
 
