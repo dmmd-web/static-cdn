@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "chalk": "^5.4.1"
+    },
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "module": "index.ts",
+    "name": "bunsvr",
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "private": true,
+    "type": "module"
+}
