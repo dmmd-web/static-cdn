@@ -2,6 +2,9 @@
 import nodePath from "node:path";
 
 // Defines constants
+export const bunsvr = {
+    version: "1.0.0"
+};
 export const root = nodePath.resolve(import.meta.dir, "../");
 
 // Defines environment
